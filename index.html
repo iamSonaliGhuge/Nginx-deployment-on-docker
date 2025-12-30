@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Docker Container Status</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: radial-gradient(circle at top, #0f2027, #000000);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 16px;
+            padding: 45px 55px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 0 30px rgba(0, 255, 204, 0.3);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            border-radius: 18px;
+            background: linear-gradient(90deg, #00ffcc, #00ff66, #00ffcc);
+            z-index: -1;
+            animation: glow 3s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { filter: blur(6px); }
+            50% { filter: blur(12px); }
+            100% { filter: blur(6px); }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #00ffcc;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            margin-top: 12px;
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        .status {
+            margin-top: 25px;
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(0, 255, 0, 0.15);
+            color: #00ff00;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888888;
+        }
+
+        .footer span {
+            color: #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>🐳 Docker Container</h1>
+        <div class="subtitle">
+            Application deployed successfully using Nginx
+        </div>
+
+        <div class="status">
+            ✔ Container is LIVE & HEALTHY
+        </div>
+
+        <div class="footer">
+            Powered by <span>Docker</span> | DevOps Deployment
+        </div>
+    </div>
+
+</body>
+</html>
